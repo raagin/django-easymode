@@ -173,6 +173,7 @@ def get_real_fieldname(field, lang):
     :param lang: The language for which you want to know the real name.
     :rtype: The actual name of the ``field`` in the ``lang``.
     """
+    lang = lang or settings.LANGUAGE_CODE
     return str('%s_%s' % (field, to_locale(lang).lower()))
 
 def localize_fieldnames(fields, internationalized_fields):
